@@ -20,6 +20,3 @@ coverage/
 .env
 .env.*
 !.env.example
-
-# misc
-docs/*
