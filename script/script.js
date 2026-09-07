@@ -1,12 +1,12 @@
 const menuButton = document.querySelector(".menu-toggle");
-const navigation = document.querySelector("#navigation");
+const navigationMenu = document.querySelector("#navigation");
 const mobileViewport = window.matchMedia("(max-width: 760px)");
 
-if (menuButton && navigation) {
+if (menuButton && navigationMenu) {
   function setMenuOpen(open) {
     menuButton.setAttribute("aria-expanded", String(open));
     menuButton.setAttribute("aria-label", open ? "Fechar menu" : "Abrir menu");
-    navigation.classList.toggle(
+    navigationMenu.classList.toggle(
       "is-collapsed",
       mobileViewport.matches && !open,
     );

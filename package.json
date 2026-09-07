@@ -1,0 +1,26 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "Personal portfolio under continuous development. Built as a practical project to deepen my frontend and web development fundamentals.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+  "lint:html": "html-validate \"**/*.html\"",
+  "lint:css": "stylelint \"style/**/*.css\"",
+  "lint:js": "eslint \"script/**/*.js\"",
+  "check": "npm run lint:html && npm run lint:css && npm run lint:js"
+},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.10.0",
+    "globals": "^17.12.0",
+    "html-validate": "^10.17.0",
+    "stylelint": "^17.15.0",
+    "stylelint-config-standard": "^40.0.0"
+  }
+}
