@@ -153,12 +153,57 @@ nav a:hover,
 }
 
 .status-dot {
+  position: relative;
   display: inline-block;
-  width: 6px;
-  height: 6px;
+  width: 0.5rem;
+  height: 0.5rem;
   border-radius: 50%;
   background: var(--mint);
+  vertical-align: middle;
   margin-right: 8px;
+}
+
+.status-dot::before {
+  content: "";
+  position: absolute;
+  inset: 50% auto auto 50%;
+  width: 0.5rem;
+  height: 0.5rem;
+  border: 1px solid #7fffd4;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 0.5;
+  animation: signal-pulse 1.8s ease-out infinite 0.9s;
+}
+
+.status-dot::after {
+  content: "";
+  position: absolute;
+  inset: 50% auto auto 50%;
+  width: 0.5rem;
+  height: 0.5rem;
+  border: 1px solid #7fffd4;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 0.8;
+  animation: signal-pulse 1.8s ease-out infinite;
+}
+
+@keyframes signal-pulse {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.7;
+  }
+
+  70% {
+    transform: translate(-50%, -50%) scale(3.6);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(3.6);
+    opacity: 0;
+  }
 }
 
 h1 {
