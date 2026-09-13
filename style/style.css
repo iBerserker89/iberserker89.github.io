@@ -823,6 +823,10 @@ h3 {
   background: var(--surface);
 }
 
+.project-card + .project-card {
+  margin-top: 24px;
+}
+
 .project-art {
   position: relative;
   display: flex;
