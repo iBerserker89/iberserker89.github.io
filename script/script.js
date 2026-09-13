@@ -19,7 +19,7 @@ if (menuButton && navigationMenu) {
     setMenuOpen(menuButton.getAttribute("aria-expanded") !== "true");
   });
 
-  navigation.addEventListener("click", (event) => {
+  navigationMenu.addEventListener("click", (event) => {
     if (event.target.closest("a")) setMenuOpen(false);
   });
 
@@ -34,6 +34,26 @@ if (menuButton && navigationMenu) {
   });
 
   mobileViewport.addEventListener("change", () => setMenuOpen(false));
+}
+
+const viewportButtons = document.querySelectorAll(
+  ".viewport-switcher button",
+);
+
+const componentPreview = document.querySelector(".component-preview");
+
+if (viewportButtons.length > 0 && componentPreview) {
+  viewportButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      viewportButtons.forEach((viewportButton) => {
+        const isActive = viewportButton === button;
+
+        viewportButton.setAttribute("aria-pressed", String(isActive));
+      });
+
+      componentPreview.dataset.viewport = button.dataset.viewport;
+    });
+  });
 }
 
 const year = document.querySelector("#year");
