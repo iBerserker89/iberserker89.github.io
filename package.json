@@ -1,7 +1,7 @@
 {
   "name": "portfolio",
   "version": "1.0.0",
-  "description": "Personal portfolio under continuous development. Built as a practical project to deepen my frontend and web development fundamentals.",
+  "description": "Personal web developer portfolio showcasing Drupal, PHP, JavaScript and frontend projects.",
   "main": "index.js",
   "directories": {
     "doc": "docs"

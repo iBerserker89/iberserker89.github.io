@@ -1,4 +1,3 @@
 # Personal Portfolio
 
-Personal portfolio under continuous development.
-Built as a practical project to deepen my frontend and web development fundamentals.
+Personal portfolio showcasing my work as a Web Developer, with professional experience in Drupal and projects involving PHP, JavaScript, APIs and modern frontend development.
