@@ -7,11 +7,12 @@
     "doc": "docs"
   },
   "scripts": {
-  "lint:html": "html-validate \"**/*.html\"",
-  "lint:css": "stylelint \"style/**/*.css\"",
-  "lint:js": "eslint \"script/**/*.js\"",
-  "check": "npm run lint:html && npm run lint:css && npm run lint:js"
-},
+    "lint:html": "html-validate \"**/*.html\"",
+    "lint:css": "stylelint \"style/**/*.css\"",
+    "lint:js": "eslint \"script/**/*.js\"",
+    "test": "node --test",
+    "check": "npm run lint:html && npm run lint:css && npm run lint:js && npm test"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -20,6 +21,7 @@
     "eslint": "^10.10.0",
     "globals": "^17.12.0",
     "html-validate": "^10.17.0",
+    "jsdom": "^29.1.1",
     "stylelint": "^17.15.0",
     "stylelint-config-standard": "^40.0.0"
   }
