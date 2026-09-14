@@ -3,14 +3,25 @@ import globals from "globals";
 
 export default [
   {
-    files: ["script/**/*.js"],
+    files: ["src/scripts/**/*.js"],
 
     languageOptions: {
       ecmaVersion: "latest",
-      sourceType: "script",
+      sourceType: "module",
       globals: globals.browser,
     },
 
+    rules: {
+      ...js.configs.recommended.rules,
+    },
+  },
+  {
+    files: ["tests/**/*.mjs", "*.mjs"],
+    languageOptions: {
+      ecmaVersion: "latest",
+      sourceType: "module",
+      globals: globals.node,
+    },
     rules: {
       ...js.configs.recommended.rules,
     },
