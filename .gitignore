@@ -13,6 +13,7 @@ Desktop.ini
 # Dependencies and generated output
 node_modules/
 dist/
+.astro/
 coverage/
 *.log
 

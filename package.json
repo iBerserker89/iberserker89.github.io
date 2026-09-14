@@ -2,27 +2,41 @@
   "name": "portfolio",
   "version": "1.0.0",
   "description": "Personal web developer portfolio showcasing Drupal, PHP, JavaScript and frontend projects.",
-  "main": "index.js",
+  "type": "module",
   "directories": {
     "doc": "docs"
   },
+  "engines": {
+    "node": ">=24 <25"
+  },
   "scripts": {
-    "lint:html": "html-validate \"**/*.html\"",
-    "lint:css": "stylelint \"style/**/*.css\"",
-    "lint:js": "eslint \"script/**/*.js\"",
-    "test": "node --test",
-    "check": "npm run lint:html && npm run lint:css && npm run lint:js && npm test"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check:astro": "astro check",
+    "lint:html": "npm run build && npm run lint:html:built",
+    "lint:html:built": "html-validate --config .htmlvalidate.json \"dist/**/*.html\"",
+    "lint:css": "stylelint \"src/styles/**/*.css\"",
+    "lint:js": "eslint \"src/scripts/**/*.js\" \"tests/**/*.mjs\" \"*.mjs\"",
+    "test": "npm run build && npm run test:built",
+    "test:built": "node --test",
+    "check": "npm run check:astro && npm run build && npm run lint:html:built && npm run lint:css && npm run lint:js && npm run test:built"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@astrojs/check": "^0.9.10",
     "@eslint/js": "^10.0.1",
     "eslint": "^10.10.0",
     "globals": "^17.12.0",
     "html-validate": "^10.17.0",
     "jsdom": "^29.1.1",
     "stylelint": "^17.15.0",
-    "stylelint-config-standard": "^40.0.0"
+    "stylelint-config-standard": "^40.0.0",
+    "typescript": "^6.0.3"
+  },
+  "dependencies": {
+    "astro": "^7.3.2"
   }
 }
