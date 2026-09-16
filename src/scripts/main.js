@@ -1,8 +1,8 @@
 import { initNavigation } from "./navigation.js";
-import { initPlayground } from "./playground.js";
+import { initHeroGlobe } from "./hero-globe.js";
 
 initNavigation();
-initPlayground();
+initHeroGlobe();
 
 const year = document.querySelector("#year");
 if (year) year.textContent = String(new Date().getFullYear());
