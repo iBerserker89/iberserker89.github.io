@@ -11,6 +11,7 @@ function setup(t, { reduced = false, mobile = false } = {}) {
   let next = 0;
   let draws = 0;
   let visible;
+  let resize;
   let mask;
   let pixelReads = 0;
   win.Image = class { constructor() { mask = this; } };
@@ -30,7 +31,7 @@ function setup(t, { reduced = false, mobile = false } = {}) {
   };
   win.requestAnimationFrame = (callback) => { frames.set(++next, callback); return next; };
   win.cancelAnimationFrame = (id) => frames.delete(id);
-  win.ResizeObserver = class { observe() {} disconnect() {} };
+  win.ResizeObserver = class { constructor(callback) { resize = callback; } observe() {} disconnect() {} };
   win.IntersectionObserver = class {
     constructor(callback) { visible = (value) => callback([{ isIntersecting: value }]); }
     observe() {} disconnect() {}
@@ -42,7 +43,7 @@ function setup(t, { reduced = false, mobile = false } = {}) {
   });
   const cleanup = initHeroGlobe(win.document);
   t.after(() => { cleanup(); dom.window.close(); });
-  return { win, frames, queries, visible, cleanup, mask, pixelReads: () => pixelReads, draws: () => draws };
+  return { win, frames, queries, visible, resize, cleanup, mask, pixelReads: () => pixelReads, draws: () => draws };
 }
 
 test('reduced motion draws a static globe without an animation loop', (t) => {
@@ -52,10 +53,42 @@ test('reduced motion draws a static globe without an animation loop', (t) => {
   assert.equal(globe.frames.size, 0);
 });
 
-test('mobile renders statically without an animation loop', (t) => {
+for (const mobile of [false, true]) {
+  test(`${mobile ? 'mobile' : 'desktop'} runs one continuous animation loop`, (t) => {
+    const globe = setup(t, { mobile });
+    globe.visible(true);
+    const before = globe.draws();
+    for (const time of [100, 150, 200]) {
+      assert.equal(globe.frames.size, 1);
+      const [id, callback] = [...globe.frames][0];
+      globe.frames.delete(id);
+      callback(time);
+    }
+    assert.ok(globe.draws() > before);
+    assert.equal(globe.frames.size, 1);
+  });
+}
+
+test('mobile with reduced motion renders a frame without continuous animation', (t) => {
+  const globe = setup(t, { mobile: true, reduced: true });
+  globe.visible(true);
+  globe.mask.onload();
+  assert.ok(globe.draws() > 0);
+  assert.equal(globe.frames.size, 0);
+});
+
+test('resize and orientation profile changes never duplicate the animation loop', (t) => {
   const globe = setup(t, { mobile: true });
   globe.visible(true);
-  assert.ok(globe.draws() > 0);
+  const media = globe.queries.get('(max-width: 760px)');
+  for (const mobile of [true, false, true, false, true]) {
+    media.matches = mobile;
+    media.dispatchEvent(new globe.win.Event('change'));
+    globe.resize();
+    globe.visible(true);
+    assert.equal(globe.frames.size, 1);
+  }
+  globe.cleanup();
   assert.equal(globe.frames.size, 0);
 });
 

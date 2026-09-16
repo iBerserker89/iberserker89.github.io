@@ -188,7 +188,7 @@ export function initHeroGlobe(root = document) {
     win.cancelAnimationFrame(frame);
     frame = 0;
     lastTime = 0;
-    if (visible && !root.hidden && !reduced.matches && !mobile.matches) {
+    if (visible && !root.hidden && !reduced.matches) {
       frame = win.requestAnimationFrame(tick);
     }
   }
