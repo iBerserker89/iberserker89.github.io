@@ -22,3 +22,4 @@ coverage/
 .env.*
 !.env.example
 docs/local/
+docs/superpowers

@@ -1,6 +1,6 @@
 .section {
   padding-block: 85px;
-  border-top: 1px solid var(--line);
+  border-top: 1px solid var(--color-border);
 }
 
 .section-heading {
@@ -35,7 +35,7 @@ h3 {
 
 .heading-row > p {
   font-size: 12px;
-  color: var(--muted);
+  color: var(--color-text-secondary);
   margin: 0;
 }
 
@@ -47,12 +47,12 @@ h3 {
 
 .about-copy p {
   margin: 0 0 18px;
-  color: var(--muted);
+  color: var(--color-text-secondary);
   font-size: 14px;
 }
 
 .about-copy strong {
-  color: var(--text);
+  color: var(--color-text);
   font-weight: 550;
 }
 
@@ -69,20 +69,20 @@ h3 {
 }
 
 .about-facts strong span {
-  color: var(--blue);
+  color: var(--color-accent-hover);
   font-size: 17px;
   margin-left: 5px;
 }
 
 .about-facts p {
   font-size: 12px;
-  color: var(--muted);
+  color: var(--color-text-secondary);
   margin: 8px 0 0;
 }
 
 .education {
   grid-column: 1 / -1;
-  border-top: 1px solid var(--line);
+  border-top: 1px solid var(--color-border);
   padding-top: 22px;
 }
 
@@ -91,7 +91,7 @@ h3 {
     9px/1.6 ui-monospace,
     monospace;
   letter-spacing: 1.5px;
-  color: var(--muted);
+  color: var(--color-text-secondary);
 }
 
 .education h3 {
@@ -108,8 +108,8 @@ h3 {
 
 .skill-card {
   padding: 25px 22px;
-  background: var(--surface);
-  border: 1px solid var(--line);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
   border-radius: 8px;
   transition:
     border-color 0.2s,
@@ -117,7 +117,7 @@ h3 {
 }
 
 .skill-card:hover {
-  border-color: #4c6c99;
+  border-color: var(--color-accent-dark);
   transform: translateY(-4px);
 }
 
@@ -127,9 +127,9 @@ h3 {
   justify-content: center;
   width: 37px;
   height: 37px;
-  color: var(--blue);
-  background: #192840;
-  border: 1px solid #263953;
+  color: var(--color-accent-hover);
+  background: var(--color-surface-elevated);
+  border: 1px solid var(--color-border);
   border-radius: 7px;
   font: 19px monospace;
   margin-bottom: 24px;
@@ -140,7 +140,7 @@ h3 {
 }
 
 .skill-card p {
-  color: var(--muted);
+  color: var(--color-text-secondary);
   font-size: 12px;
   line-height: 1.8;
   margin-bottom: 22px;
@@ -157,12 +157,12 @@ h3 {
 
 .tags li,
 .tags > span {
-  border: 1px solid #293448;
+  border: 1px solid var(--color-border);
   border-radius: 4px;
   padding: 3px 8px;
   font-size: 10px;
-  color: #afbed3;
-  background: #121c2a;
+  color: var(--color-text-secondary);
+  background: var(--color-surface-elevated);
 }
 
 .job {
@@ -181,15 +181,15 @@ h3 {
     10px/1.6 ui-monospace,
     monospace;
   letter-spacing: 1px;
-  color: var(--muted);
+  color: var(--color-text-secondary);
   padding-top: 5px;
 }
 
 .current {
   display: table;
-  color: var(--mint);
-  background: #86d8bc0b;
-  border: 1px solid #86d8bc30;
+  color: var(--color-accent-hover);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
   padding: 3px 8px;
   border-radius: 4px;
   margin-top: 12px;
@@ -199,7 +199,7 @@ h3 {
 
 .job-content {
   position: relative;
-  border-left: 1px solid var(--line);
+  border-left: 1px solid var(--color-border);
   padding-left: 32px;
 }
 
@@ -208,11 +208,11 @@ h3 {
   position: absolute;
   left: -5px;
   top: 8px;
-  background: var(--blue);
+  background: var(--color-accent-hover);
   width: 9px;
   height: 9px;
   border-radius: 50%;
-  box-shadow: 0 0 0 5px var(--bg);
+  box-shadow: 0 0 0 5px var(--color-bg);
 }
 
 .job h3 {
@@ -220,14 +220,14 @@ h3 {
 }
 
 .job h3 span {
-  color: var(--muted);
+  color: var(--color-text-secondary);
   font-size: 13px;
   font-weight: 400;
   margin-left: 8px;
 }
 
 .company {
-  color: var(--blue);
+  color: var(--color-accent-hover);
   font-size: 12px;
   margin-top: 0;
 }
@@ -235,7 +235,7 @@ h3 {
 .job-content > p:not(.company),
 .job li {
   font-size: 13px;
-  color: var(--muted);
+  color: var(--color-text-secondary);
 }
 
 .job ul {
@@ -249,7 +249,7 @@ h3 {
 }
 
 .text-link {
-  color: var(--blue);
+  color: var(--color-accent-hover);
   font-size: 12px;
 }
 

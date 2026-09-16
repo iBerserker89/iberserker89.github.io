@@ -1,10 +1,10 @@
 .project-card {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  border: 1px solid var(--line);
+  border: 1px solid var(--color-border);
   border-radius: 9px;
   overflow: hidden;
-  background: var(--surface);
+  background: var(--color-surface);
 }
 
 .project-card + .project-card {
@@ -18,8 +18,8 @@
   justify-content: center;
   align-items: center;
   padding: 42px;
-  background: radial-gradient(ellipse at center, #1d3456, #101a2a);
-  border-right: 1px solid var(--line);
+  background: radial-gradient(ellipse at center, var(--color-surface-elevated), var(--color-bg-alt));
+  border-right: 1px solid var(--color-border);
   min-height: 320px;
   overflow: hidden;
 }
@@ -27,17 +27,17 @@
 .mini-browser {
   width: 100%;
   max-width: 330px;
-  background: #0b1422;
-  border: 1px solid #354a66;
+  background: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
   border-radius: 6px;
   transform: rotate(-4deg);
-  box-shadow: 0 20px 30px #0004;
+  box-shadow: 0 20px 30px var(--color-shadow);
 }
 
 .mini-bar {
   font-size: 9px;
-  color: #9bb0cd;
-  border-bottom: 1px solid #273950;
+  color: var(--color-text-secondary);
+  border-bottom: 1px solid var(--color-border);
   padding: 7px 12px;
 }
 
@@ -61,7 +61,7 @@
 .fake-line {
   height: 4px;
   width: 80%;
-  background: #25364f;
+  background: var(--color-border);
   border-radius: 5px;
   margin-bottom: 8px;
 }
@@ -79,8 +79,8 @@
 .mini-tiles span {
   height: 37px;
   flex: 1;
-  background: #182942;
-  border: 1px solid #294263;
+  background: var(--color-surface-elevated);
+  border: 1px solid var(--color-border);
   border-radius: 3px;
 }
 
@@ -88,8 +88,8 @@
   position: absolute;
   right: 12px;
   bottom: 12px;
-  background: var(--blue);
-  color: var(--bg);
+  background: var(--color-accent-hover);
+  color: var(--color-bg);
   width: 25px;
   height: 25px;
   text-align: center;
@@ -99,7 +99,7 @@
 .art-caption {
   font: 8px monospace;
   letter-spacing: 2px;
-  color: #8da5c5;
+  color: var(--color-text-muted);
   margin-top: 28px;
 }
 
@@ -112,7 +112,7 @@
 .project-label {
   font-size: 9px;
   letter-spacing: 1.3px;
-  color: var(--mint);
+  color: var(--color-accent-hover);
 }
 
 .project-copy h3 {
@@ -123,12 +123,32 @@
 
 .project-copy p {
   font-size: 13px;
-  color: var(--muted);
+  color: var(--color-text-secondary);
 }
 
 .project-copy .merge-note {
   font-size: 11px;
   margin-block: 20px;
-  color: var(--mint);
+  color: var(--color-accent-hover);
 }
 
+
+.project-card:nth-of-type(2) .project-art {
+  background: var(--color-bg-alt);
+}
+
+.project-card:nth-of-type(2) .mini-tiles span {
+  border-color: var(--color-accent-dark);
+}
+
+.project-card:nth-of-type(3) .project-art {
+  background: linear-gradient(135deg, var(--color-surface), var(--color-bg));
+}
+
+.project-card:nth-of-type(3) .mini-browser {
+  border-color: var(--color-accent-dark);
+}
+
+.project-card:hover {
+  border-color: var(--color-accent-dark);
+}
