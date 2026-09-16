@@ -1,7 +1,7 @@
 .contact-panel {
   text-align: center;
   padding: 30px 20px 40px;
-  background: radial-gradient(ellipse at center, #14233b66, transparent 70%);
+  background: radial-gradient(ellipse at center, var(--color-bg-alt), transparent 70%);
 }
 
 .contact-panel h2 {
@@ -9,7 +9,7 @@
 }
 
 .contact-panel > p:not(.eyebrow) {
-  color: var(--muted);
+  color: var(--color-text-secondary);
   font-size: 14px;
   margin-block: 25px;
 }
@@ -18,7 +18,7 @@
   display: inline-block;
   font-size: clamp(15px, 2.3vw, 24px);
   padding-bottom: 9px;
-  border-bottom: 1px solid #496488;
+  border-bottom: 1px solid var(--color-accent-dark);
   overflow-wrap: anywhere;
 }
 
@@ -28,7 +28,7 @@
   gap: 28px;
   margin-top: 27px;
   font-size: 12px;
-  color: var(--muted);
+  color: var(--color-text-secondary);
 }
 
 .footer {
@@ -36,13 +36,18 @@
   justify-content: space-between;
   align-items: center;
   gap: 24px;
-  border-top: 1px solid var(--line);
+  border-top: 1px solid var(--color-border);
   padding-block: 28px;
 }
 
 .footer p,
 .footer > a:last-child {
   font-size: 10px;
-  color: var(--muted);
+  color: var(--color-text-secondary);
 }
 
+
+.email-link:hover {
+  color: var(--color-accent-hover);
+  border-color: var(--color-accent-hover);
+}

@@ -12,7 +12,7 @@
   font-size: 10px;
   letter-spacing: 2.1px;
   font-weight: 650;
-  color: var(--blue);
+  color: var(--color-accent-hover);
   margin: 0 0 23px;
 }
 
@@ -22,7 +22,7 @@
   width: 0.5rem;
   height: 0.5rem;
   border-radius: 50%;
-  background: var(--mint);
+  background: var(--color-accent);
   vertical-align: middle;
   margin-right: 8px;
 }
@@ -33,7 +33,7 @@
   inset: 50% auto auto 50%;
   width: 0.5rem;
   height: 0.5rem;
-  border: 1px solid #7fffd4;
+  border: 1px solid var(--color-accent);
   border-radius: 50%;
   transform: translate(-50%, -50%) scale(1);
   opacity: 0.5;
@@ -46,7 +46,7 @@
   inset: 50% auto auto 50%;
   width: 0.5rem;
   height: 0.5rem;
-  border: 1px solid #7fffd4;
+  border: 1px solid var(--color-accent);
   border-radius: 50%;
   transform: translate(-50%, -50%) scale(1);
   opacity: 0.8;
@@ -86,7 +86,7 @@ h1 {
 }
 
 .hero-description {
-  color: var(--muted);
+  color: var(--color-text-secondary);
   max-width: 490px;
   font-size: 14px;
   margin-bottom: 30px;
@@ -116,17 +116,18 @@ h1 {
 }
 
 .primary {
-  background: var(--blue);
-  color: #0a1424;
+  background: var(--color-accent);
+  color: var(--color-bg);
 }
 
 .primary:hover {
-  background: #91bdff;
+  background: var(--color-accent-hover);
 }
 
 .secondary {
-  border: 1px solid var(--line);
-  background: #111925;
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
 }
 
 .hero-meta {
@@ -135,11 +136,11 @@ h1 {
   gap: 18px;
   margin-top: 27px;
   font-size: 10px;
-  color: var(--muted);
+  color: var(--color-text-secondary);
 }
 
 .hero-meta span + span {
-  border-left: 1px solid var(--line);
+  border-left: 1px solid var(--color-border);
   padding-left: 18px;
 }
 
@@ -153,23 +154,23 @@ h1 {
   content: "";
   position: absolute;
   inset: -30px;
-  background: radial-gradient(ellipse, #2456a326, transparent 65%);
+  background: radial-gradient(ellipse, var(--color-accent-glow), transparent 65%);
   z-index: -1;
 }
 
 .orbit {
   position: absolute;
   inset: -30px;
-  border: 1px solid #699fec12;
+  border: 1px solid var(--color-border-subtle);
   border-radius: 50%;
   z-index: -1;
 }
 
 .ui-playground {
-  background: var(--surface);
-  border: 1px solid #2b374a;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
   border-radius: 10px;
-  box-shadow: 0 25px 80px #0004;
+  box-shadow: 0 25px 80px var(--color-shadow);
   transform: rotate(-2deg);
   overflow: hidden;
 }
@@ -179,15 +180,15 @@ h1 {
   align-items: center;
   justify-content: space-between;
   padding: 13px 18px;
-  border-bottom: 1px solid var(--line);
-  color: var(--muted);
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-text-secondary);
   font:
     10px ui-monospace,
     monospace;
 }
 
 .ui-playground-bar > span:first-child {
-  color: #7c8da6;
+  color: var(--color-text-muted);
   letter-spacing: 3px;
 }
 
@@ -200,8 +201,8 @@ h1 {
   gap: 4px;
   padding: 4px;
   margin-bottom: 18px;
-  background: #0d1420;
-  border: 1px solid var(--line);
+  background: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
   border-radius: 6px;
 }
 
@@ -210,7 +211,7 @@ h1 {
   border: 0;
   border-radius: 4px;
   background: transparent;
-  color: var(--muted);
+  color: var(--color-text-secondary);
   font: inherit;
   font-size: 9px;
   line-height: 1;
@@ -218,8 +219,8 @@ h1 {
 }
 
 .viewport-switcher button[aria-pressed="true"] {
-  background: #1b2a40;
-  color: var(--blue);
+  background: var(--color-accent);
+  color: var(--color-bg);
 }
 
 .component-preview {
@@ -228,8 +229,8 @@ h1 {
   width: 100%;
   margin-inline: auto;
   padding: 22px;
-  background: #0d1521;
-  border: 1px solid var(--line);
+  background: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
   border-radius: 8px;
   transition: max-width 300ms ease;
 }
@@ -249,7 +250,7 @@ h1 {
 .component-label {
   display: inline-block;
   margin-bottom: 10px;
-  color: var(--mint);
+  color: var(--color-accent-hover);
   font-size: 8px;
   font-weight: 650;
   letter-spacing: 1.4px;
@@ -257,7 +258,7 @@ h1 {
 
 .component-title {
   margin: 0 0 8px;
-  color: var(--text);
+  color: var(--color-text);
   font-size: 22px;
   font-weight: 650;
   line-height: 1.25;
@@ -267,7 +268,7 @@ h1 {
 .component-description {
   max-width: 320px;
   margin: 0 0 18px;
-  color: var(--muted);
+  color: var(--color-text-secondary);
   font-size: 11px;
   line-height: 1.7;
 }
@@ -290,14 +291,14 @@ h1 {
 }
 
 .demo-button-primary {
-  background: var(--blue);
-  color: #0a1424;
+  background: var(--color-accent);
+  color: var(--color-bg);
 }
 
 .demo-button-secondary {
-  background: #111c2a;
-  border: 1px solid var(--line);
-  color: var(--text);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
 }
 
 .demo-card {
@@ -306,8 +307,8 @@ h1 {
   align-items: center;
   gap: 12px;
   padding: 12px;
-  background: #121d2b;
-  border: 1px solid #29384d;
+  background: var(--color-surface-elevated);
+  border: 1px solid var(--color-border);
   border-radius: 6px;
 }
 
@@ -316,29 +317,29 @@ h1 {
   place-items: center;
   width: 34px;
   height: 34px;
-  background: #192840;
-  border: 1px solid #2e4666;
+  background: var(--color-surface-elevated);
+  border: 1px solid var(--color-border);
   border-radius: 5px;
-  color: var(--blue);
+  color: var(--color-accent-hover);
   font-size: 16px;
 }
 
 .demo-card strong {
   display: block;
   margin-bottom: 2px;
-  color: var(--text);
+  color: var(--color-text);
   font-size: 10px;
   font-weight: 650;
 }
 
 .demo-card small {
   display: block;
-  color: var(--muted);
+  color: var(--color-text-secondary);
   font-size: 8px;
 }
 
 .demo-card-arrow {
-  color: var(--blue);
+  color: var(--color-accent-hover);
   font-size: 12px;
 }
 
@@ -370,8 +371,8 @@ h1 {
   justify-content: space-between;
   gap: 12px;
   padding: 10px 15px;
-  border-top: 1px solid var(--line);
-  color: var(--muted);
+  border-top: 1px solid var(--color-border);
+  color: var(--color-text-secondary);
 }
 
 .playground-stack {
@@ -382,8 +383,8 @@ h1 {
 
 .playground-stack span {
   padding: 3px 6px;
-  background: #111c2a;
-  border: 1px solid #26364c;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
   border-radius: 3px;
   font-size: 8px;
   line-height: 1.2;
@@ -402,11 +403,11 @@ h1 {
   right: -24px;
   bottom: -40px;
   padding: 12px 20px;
-  background: #152032;
-  border: 1px solid #33445d;
+  background: var(--color-surface-elevated);
+  border: 1px solid var(--color-border);
   border-radius: 6px;
   font-size: 11px;
-  box-shadow: 0 10px 25px #0004;
+  box-shadow: 0 10px 25px var(--color-shadow);
 }
 
 .floating-label > span {
@@ -418,8 +419,29 @@ h1 {
   position: absolute;
   bottom: 30px;
   left: 0;
-  color: var(--muted);
+  color: var(--color-text-secondary);
   font-size: 9px;
   letter-spacing: 2px;
 }
 
+
+/* Keep the main heading neutral; reserve red for smaller accents. */
+h1 .accent {
+  color: var(--color-text);
+}
+
+
+.secondary:hover {
+  border-color: var(--color-accent-hover);
+  color: var(--color-accent-hover);
+}
+
+.viewport-switcher button:hover:not([aria-pressed="true"]) {
+  background: var(--color-surface-elevated);
+  color: var(--color-accent-hover);
+}
+
+.hero-meta,
+.scroll-cue {
+  color: var(--color-text-muted);
+}
