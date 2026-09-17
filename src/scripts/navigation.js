@@ -37,3 +37,52 @@ export function initNavigation(root = document) {
     mobileViewport.addEventListener("change", () => setMenuOpen(false));
   }
 }
+
+export function initProjectReveal(root = document) {
+  const projects = root.querySelector("#projetos");
+  if (!projects) return () => {};
+
+  const cards = [...projects.querySelectorAll(".project-card")];
+  if (!cards.length) return () => {};
+
+  const win = root.defaultView ?? window;
+  const reducedMotion = win.matchMedia(
+    "(prefers-reduced-motion: reduce)",
+  );
+
+  if (
+    reducedMotion.matches ||
+    typeof win.IntersectionObserver !== "function"
+  ) {
+    cards.forEach((card) => card.classList.add("is-visible"));
+    return () => {};
+  }
+
+  projects.classList.add("projects-reveal-ready");
+
+  const observer = new win.IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        if (!entry.isIntersecting) continue;
+
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      }
+    },
+    {
+      threshold: 0.18,
+      rootMargin: "0px 0px -8% 0px",
+    },
+  );
+
+  cards.forEach((card) => observer.observe(card));
+
+  return () => {
+    observer.disconnect();
+    projects.classList.remove("projects-reveal-ready");
+
+    cards.forEach((card) => {
+      card.classList.remove("is-visible");
+    });
+  };
+}
